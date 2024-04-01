@@ -12,4 +12,12 @@ try{
     echo "hiba: az adatbazis kapcsolodas sikertelen !!!".$e->getMessage();
     exit;
 }		
+
+// search engine
+
+$con = new mysqli("localhost","root", "","schoolend");
+
+if (!$con) {
+    echo "Connection Failed". mysqli_connect_error();
+}
 ?>
