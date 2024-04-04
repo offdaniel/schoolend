@@ -17,7 +17,7 @@ if (isset($_POST['input'])) {
                     <th>Leírás</th>
                     <th>Kaukció (Ft)</th>
                     <th>Bérlés (Ft/nap)</th>
-                    <th>Kép</th>
+                    <!-- <th>Kép</th> -->
                 </tr>
             </thead>
             <tbody>
