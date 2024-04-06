@@ -4,7 +4,8 @@ include("../server/config.php");
 if (isset($_POST['input'])) {
     $input = $_POST['input'];
 
-    $query = "SELECT `gepek`. * FROM `gepek` WHERE gepek.nev LIKE '%{$input}%' OR gepek.leiras LIKE '%{$input}%';";
+    $query = "SELECT `gepek`. * FROM `gepek` WHERE gepek.nev LIKE 
+    '%{$input}%' OR gepek.leiras LIKE '%{$input}%';";
 
     $result = mysqli_query($con,$query);
 
@@ -17,7 +18,6 @@ if (isset($_POST['input'])) {
                     <th>Leírás</th>
                     <th>Kaukció (Ft)</th>
                     <th>Bérlés (Ft/nap)</th>
-                    <!-- <th>Kép</th> -->
                 </tr>
             </thead>
             <tbody>
@@ -29,7 +29,6 @@ if (isset($_POST['input'])) {
                     $leiras = $row['leiras'];
                     $kaukcio = $row['kaukcio'];
                     $berles = $row['berles'];
-                   // $kep = $row['kep']; 
                     
                     ?>
                         <tr>

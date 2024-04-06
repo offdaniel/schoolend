@@ -1,14 +1,13 @@
 <div class="container text-center">
     <div class="mt-5 mb-4" >
-        <h2 >kereső</h2>
-        <input type="text"  size="50" autocomplete="off" id="keres" placeholder="Kezdjen el gépelni!"  >
+        <h2>kereső</h2>
+        <input type="text"  size="50" autocomplete="off" 
+        id="keres" placeholder="Kezdjen el gépelni!">
     </div>
     <div id="result"></div>
 </div>
 
-
 <script>
-
         $(document).ready(function() {
             $("#keres").keyup(function() {
                 var input = $(this).val();
@@ -30,5 +29,4 @@
                 }
             });
         });
-
 </script>

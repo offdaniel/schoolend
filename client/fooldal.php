@@ -10,7 +10,8 @@
         //console.log(data);
         for (let obj of data) {
             document.querySelector('div.row').innerHTML += 
-            `<div class="col-md-3 col-sm-6 border border-secondary bg-white" style="--bs-border-opacity: .3;" data-bs-toggle="modal" data-bs-target="#exampleModal" onclick="details(this, '${obj.id}')">
+            `<div class="col-md-3 col-sm-6 border border-secondary bg-white" style="--bs-border-opacity: .3;"
+             data-bs-toggle="modal" data-bs-target="#exampleModal" onclick="details(this, '${obj.id}')">
                 <img src="kepek/${obj.kep}" alt="${obj.nev}" class="img-fluid">
                 <p class="text-center">${obj.nev}</p>
             </div>`
@@ -36,6 +37,4 @@
             });
         }
     }
-
-
 </script>
