@@ -37,7 +37,7 @@
         <div class="collapse navbar-collapse justify-content-between" id="navbarNav">
             <ul class="navbar-nav fs-5">
                 <li class="nav-item" style="margin-right: 10px;">
-                    <a class="nav-link" href="index.php">Fő oldal</a>
+                    <a class="nav-link" href="index.php">Főoldal</a>
                 </li>
                 <li class="nav-item" style="margin-right: 10px;">
                     <a class="nav-link" href="index.php?prog=benzines.php">Benzines gépek</a>
