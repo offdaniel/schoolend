@@ -1,16 +1,17 @@
 <?php
+include("../server/db.php");
 
-include("../server/config.php");
 if (isset($_POST['input'])) {
     $input = $_POST['input'];
 
-    $query = "SELECT `gepek`. * FROM `gepek` WHERE gepek.nev LIKE 
-    '%{$input}%' OR gepek.leiras LIKE '%{$input}%';";
+    $query = "SELECT * FROM `gepek` WHERE `nev` LIKE :input OR `leiras` LIKE :input";
 
-    $result = mysqli_query($con,$query);
+    $stmt = $db->prepare($query);
+    $stmt->execute(['input' => "%$input%"]);
+    $result = $stmt->fetchAll();
 
-    if (mysqli_num_rows($result) > 0) {?>
-        
+    if ($result) {
+?>
         <table class="table borded mt-4">
             <thead>
                 <tr>
@@ -21,34 +22,27 @@ if (isset($_POST['input'])) {
                 </tr>
             </thead>
             <tbody>
-                <?php
-                
-                while ($row = mysqli_fetch_assoc($result)) {
-                    
-                    $nev = $row['nev'];
-                    $leiras = $row['leiras'];
-                    $kaukcio = $row['kaukcio'];
-                    $berles = $row['berles'];
-                    
-                    ?>
-                        <tr>
-                            <td> <?php echo $nev; ?></td>
-                            <td> <?php echo $leiras; ?></td>
-                            <td> <?php echo $kaukcio; ?></td>
-                            <td> <?php echo $berles; ?></td>
-                            <td> <?php echo $kep; ?></td>
-                        </tr>
-
-                    <?php
-                    
-                }
-               ?>
+<?php
+        foreach ($result as $row) {
+            $nev = $row['nev'];
+            $leiras = $row['leiras'];
+            $kaukcio = $row['kaukcio'];
+            $berles = $row['berles'];
+?>
+                <tr>
+                    <td><?php echo $nev; ?></td>
+                    <td><?php echo $leiras; ?></td>
+                    <td><?php echo $kaukcio; ?></td>
+                    <td><?php echo $berles; ?></td>
+                </tr>
+<?php
+        }
+?>
             </tbody>
         </table>
-        <?php
-        
+<?php
     } else {
-        echo"<h4 class='text-danger text-center'>nincs ilyen adat</h4>";
+        echo "<h4 class='text-danger text-center'>Nincs ilyen adat</h4>";
     }
 }
 ?>
