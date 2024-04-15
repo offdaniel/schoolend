@@ -37,7 +37,7 @@
         <div class="collapse navbar-collapse justify-content-between" id="navbarNav">
             <ul class="navbar-nav fs-5">
                 <li class="nav-item" style="margin-right: 10px;">
-                    <a class="nav-link" href="index.php?prog=client/fooldal.php">Főoldal</a>
+                    <a class="nav-link" href="index.php">Főoldal</a>
                 </li>
                 <li class="nav-item" style="margin-right: 10px;">
                     <a class="nav-link" href="index.php?prog=client/benzines.php">Benzines gépek</a>
@@ -68,7 +68,7 @@
       if(isset($_GET['prog']))
         include $_GET['prog'];
        else
-        include 'fooldal.php';
+        include 'client/fooldal.php';
     ?>
   </div>
 </body>

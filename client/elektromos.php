@@ -22,7 +22,7 @@
         for (let obj of data) {
             document.querySelector('div.row').innerHTML += 
             `<div class="col-md-3 col-sm-6 border border-secondary bg-white" style="--bs-border-opacity: .3;" data-bs-toggle="modal" data-bs-target="#exampleModal" onclick="details(this, '${obj.id}')">
-                <img src="kepek/${obj.kep}" alt="${obj.nev}" class="img-fluid">
+                <img src="../client/kepek/${obj.kep}" alt="${obj.nev}" class="img-fluid">
                 <p class="text-center">${obj.nev}</p>
             </div>`
         }
@@ -40,7 +40,7 @@
                     `<div>
                         <h4 class="text-center">${obj.nev}</h4>
                         <p>${obj.leiras}</p>
-                        <img src="kepek/${obj.kep}" alt="${obj.nev}" class="img-fluid">
+                        <img src="../client/kepek/${obj.kep}" alt="${obj.nev}" class="img-fluid">
                         <div class="text-center">Bérlés:${obj.berles}Ft Kaukció:${obj.kaukcio}Ft</div> 
                     </div>`;
                 }

@@ -15,7 +15,7 @@
 
                 if (input != "") {
                 $.ajax({
-                    url: "result.php",
+                    url: "client/result.php",
                     method: "POST",
                     data:{input:input},
 
